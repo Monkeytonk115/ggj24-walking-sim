@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://llqsrrlds7hd"]
+
+[ext_resource type="PackedScene" uid="uid://bxtl5r3rktan2" path="res://models/road.glb" id="1_gec40"]
+[ext_resource type="Texture2D" uid="uid://b2palvy4jc41j" path="res://addons/kenney_prototype_textures/dark/texture_02.png" id="2_38ni2"]
+[ext_resource type="Texture2D" uid="uid://dp038echone5s" path="res://addons/kenney_prototype_textures/dark/texture_04.png" id="3_rwq65"]
+[ext_resource type="Texture2D" uid="uid://cpp6osakm0k1b" path="res://addons/kenney_prototype_textures/orange/texture_01.png" id="4_ajyui"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2l5t"]
+albedo_texture = ExtResource("2_38ni2")
+uv1_scale = Vector3(3, 3, 3)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb562"]
+albedo_texture = ExtResource("3_rwq65")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4c2e"]
+albedo_texture = ExtResource("4_ajyui")
+uv1_triplanar = true
+
+[node name="road" instance=ExtResource("1_gec40")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_n2l5t")
+surface_material_override/1 = SubResource("StandardMaterial3D_lb562")
+surface_material_override/2 = SubResource("StandardMaterial3D_m4c2e")
