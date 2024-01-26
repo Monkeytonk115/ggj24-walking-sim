@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmtiuhi3cudxy"]
+
+[ext_resource type="Script" path="res://interface/main_menu.gd" id="1_712lx"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_712lx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 659.0
+offset_top = 120.0
+offset_right = 1254.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 72
+text = "Busk your ass off"
+
+[node name="Start Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 682.0
+offset_right = 781.0
+offset_bottom = 757.0
+theme_override_font_sizes/font_size = 48
+text = "Let's do this!"
+
+[node name="Exit button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1140.0
+offset_top = 680.0
+offset_right = 1437.0
+offset_bottom = 755.0
+theme_override_font_sizes/font_size = 48
+text = "Naw dawg..."
+
+[connection signal="pressed" from="Exit button" to="." method="_on_exit_button_pressed"]
