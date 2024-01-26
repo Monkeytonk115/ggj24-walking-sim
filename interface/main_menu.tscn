@@ -38,4 +38,5 @@ offset_bottom = 755.0
 theme_override_font_sizes/font_size = 48
 text = "Naw dawg..."
 
+[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Exit button" to="." method="_on_exit_button_pressed"]
