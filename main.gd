@@ -26,7 +26,6 @@ func _input(event):
 		# Otherwise pass the key to the debug visual
 		if event.pressed:
 			var text = OS.get_keycode_string(event.keycode)
-			print(text)
 			$DebugVisualPrompt.update_text(text)
 			$NotesSlider.input_key(text)
 
