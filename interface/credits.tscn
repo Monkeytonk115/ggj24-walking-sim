@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://fa0aosamsu64"]
+
+[ext_resource type="Script" path="res://interface/credits.gd" id="1_ivwpj"]
+
+[node name="Credits" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ivwpj")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 132.0
+offset_right = 427.0
+offset_bottom = 363.0
+theme_override_font_sizes/font_size = 24
+text = "Programming
+Matthew
+
+Art
+Dan
+Thomas
+
+Sound
+Joolz"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1194.0
+offset_top = 136.0
+offset_right = 1709.0
+offset_bottom = 393.0
+theme_override_font_sizes/font_size = 24
+text = "3rd party assets
+
+Kenney Prototype Textures
+CC0 by kenny via www.kenney.nl
+
+Tuba model
+GPL 2.0 by MikeeUSA via opengameart.org
+
+Pandeiro model
+CC-BY-SA 3.0 by farrer via opengameart.org
+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 849.0
+offset_top = 878.0
+offset_right = 910.0
+offset_bottom = 909.0
+theme_override_font_sizes/font_size = 24
+text = "Return"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
