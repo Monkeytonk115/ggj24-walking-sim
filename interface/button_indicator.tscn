@@ -1,9 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5t8vgtjabwk2"]
 
-[ext_resource type="Texture2D" uid="uid://cub3jqppe6nx2" path="res://textures/button_a.png" id="1_n3faq"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0v0l2"]
+load_path = "res://.godot/imported/button_a.png-a76fc6229bfbc0f245da0b723a709115.ctex"
 
 [node name="ButtonIndicator" type="TextureRect"]
 offset_right = 120.0
 offset_bottom = 120.0
-texture = ExtResource("1_n3faq")
+texture = SubResource("CompressedTexture2D_0v0l2")
 expand_mode = 1
