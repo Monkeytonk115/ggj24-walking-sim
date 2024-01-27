@@ -3,11 +3,6 @@ extends Control
 
 const ButtonIndicator = preload("res://interface/button_indicator.tscn")
 
-@export var texture_1 : Texture2D
-@export var texture_2 : Texture2D
-@export var texture_3 : Texture2D
-@export var texture_4 : Texture2D
-@export var texture_wide : Texture2D
 
 func _ready():
 	pass
@@ -22,27 +17,22 @@ func _process(delta):
 
 
 func add_new_button(pos : int) -> void:
+	print("new note", pos)
 	var new_button = ButtonIndicator.instantiate()
 	new_button.position.y = 0
-	new_button.track = pos
 	if pos == 1:
 		new_button.position.x = 5
-		new_button.texture = texture_1
 	if pos == 2:
 		new_button.position.x = 130
-		new_button.texture = texture_2
 	if pos == 3:
 		new_button.position.x = 255
-		new_button.texture = texture_3
 	if pos == 4:
 		new_button.position.x = 380
-		new_button.texture = texture_4
 	if pos == 5:
 		new_button.position.x = 5
-		new_button.texture = texture_wide
 	if pos == 6:
 		new_button.position.x = 255
-		new_button.texture = texture_wide
+	new_button.set_track(pos)
 	$ButtonHolder.add_child(new_button)
 
 

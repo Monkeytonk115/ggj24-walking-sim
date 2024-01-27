@@ -1,12 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5t8vgtjabwk2"]
+[gd_scene load_steps=7 format=3 uid="uid://b5t8vgtjabwk2"]
 
 [ext_resource type="Script" path="res://interface/button_indicator.gd" id="1_4yemh"]
+[ext_resource type="Texture2D" uid="uid://bvdoyjpg40d1m" path="res://textures/blue_circle.png" id="1_xtbho"]
+[ext_resource type="Texture2D" uid="uid://b43fujy35jbfr" path="res://textures/button_bongo.png" id="3_2gn8b"]
+[ext_resource type="Texture2D" uid="uid://43c2gxirijip" path="res://textures/yellow_circle.png" id="3_edo4d"]
+[ext_resource type="Texture2D" uid="uid://bqd1vrsnifo1i" path="res://textures/green_circle.png" id="4_c0qga"]
+[ext_resource type="Texture2D" uid="uid://c6cvus856exob" path="res://textures/red_circle.png" id="5_jrbd2"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0v0l2"]
-
-[node name="ButtonIndicator" type="TextureRect"]
+[node name="ButtonIndicator" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 120.0
 offset_bottom = 120.0
-texture = SubResource("CompressedTexture2D_0v0l2")
-expand_mode = 1
 script = ExtResource("1_4yemh")
+texture_1 = ExtResource("1_xtbho")
+texture_2 = ExtResource("3_edo4d")
+texture_3 = ExtResource("4_c0qga")
+texture_4 = ExtResource("5_jrbd2")
+texture_wide = ExtResource("3_2gn8b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_xtbho")

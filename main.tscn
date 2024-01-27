@@ -28,11 +28,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.559,
 visible = false
 offset_left = 335.0
 offset_right = -1585.0
-texture_1 = null
-texture_2 = null
-texture_3 = null
-texture_4 = null
-texture_wide = null
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7

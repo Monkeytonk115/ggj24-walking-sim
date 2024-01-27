@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://doycwkgn55wm6"]
+[gd_scene load_steps=3 format=3 uid="uid://doycwkgn55wm6"]
 
 [ext_resource type="Script" path="res://interface/notes_slider.gd" id="1_p4quk"]
-[ext_resource type="Texture2D" uid="uid://bvdoyjpg40d1m" path="res://textures/blue_circle.png" id="2_gfn36"]
-[ext_resource type="Texture2D" uid="uid://b43fujy35jbfr" path="res://textures/button_bongo.png" id="3_xpxbv"]
 [ext_resource type="Texture2D" uid="uid://cwg223o3ly2if" path="res://textures/tracks.png" id="6_lcmg7"]
 
 [node name="NotesSlider" type="Control"]
@@ -16,11 +14,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_p4quk")
-texture_1 = ExtResource("2_gfn36")
-texture_2 = ExtResource("2_gfn36")
-texture_3 = ExtResource("2_gfn36")
-texture_4 = ExtResource("2_gfn36")
-texture_wide = ExtResource("3_xpxbv")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,3 +29,5 @@ texture = ExtResource("6_lcmg7")
 [node name="ButtonHolder" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 1080.0
