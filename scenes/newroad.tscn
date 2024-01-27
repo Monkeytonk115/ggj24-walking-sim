@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cci8jrhpax825"]
+[gd_scene load_steps=6 format=3 uid="uid://cci8jrhpax825"]
 
 [ext_resource type="ArrayMesh" uid="uid://caberma67bo6s" path="res://models/StreetFullMesh.obj" id="1_klpqb"]
+[ext_resource type="PackedScene" uid="uid://ditsb4nnd5dae" path="res://scenes/npc_manager.tscn" id="2_ik08v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8v4kp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,3 +39,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31921, 3.8147e-06, 30.8949)
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.9999, -5.48672e-09, 0.0141541, 0.00471637, 0.942851, 0.333182, -0.0133453, 0.333215, -0.942756, 1.6711, 2.75508, -4.65176)
 fov = 63.8
+
+[node name="npcManager" parent="." instance=ExtResource("2_ik08v")]
