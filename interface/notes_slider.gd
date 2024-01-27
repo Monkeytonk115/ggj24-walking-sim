@@ -2,10 +2,18 @@ extends Control
 
 
 const ButtonIndicator = preload("res://interface/button_indicator.tscn")
+const npc = preload("res://scenes/player.tscn")
+
+@onready var eff : AudioEffectPitchShift = AudioServer.get_bus_effect(0, 0)
 
 
 func _ready():
 	pass
+
+
+# Loads a new level given the level txt file, the instrument to use, and the BPM of this level
+func load_level(filename : String, instrument : Instrument, bpm : int) -> void:
+	$AudioStreamPlayer.stream = instrument.base_note
 
 
 func _process(delta):
@@ -42,13 +50,7 @@ func input_key(pressed_track : int) -> void:
 	for b in $ButtonHolder.get_children():
 		if b.position.y > 1005 - 120:
 			if b.track == pressed_track:
-				if b.track == 1:
-					$AudioStreamC.play()
-				if b.track == 2:
-					$AudioStreamE.play()
-				if b.track == 3:
-					$AudioStreamF.play()
-				if b.track == 4:
-					$AudioStreamG.play()
+				eff.pitch_scale = [1, 1.4, 1.8, 2][b.track - 1]
+				$AudioStreamPlayer.play()
 				print(b.position.y - 1005 + 60)
 				b.queue_free()

@@ -13,6 +13,7 @@ func _process(delta):
 
 func _on_main_menu_start_game():
 	$NotesSlider.show()
+	$NotesSlider.load_level("", load("res://scenes/InstrumentSine.tres"), 120)
 	$Timer.start()
 	$Newroad.show()
 
