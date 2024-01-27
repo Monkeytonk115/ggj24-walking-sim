@@ -14,6 +14,7 @@ func _process(delta):
 func _on_main_menu_start_game():
 	$NotesSlider.show()
 	$Timer.start()
+	$Newroad.show()
 
 
 func _input(event):

@@ -1,9 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://dty8dgj8mybao"]
+[gd_scene load_steps=5 format=3 uid="uid://cci8jrhpax825"]
 
 [ext_resource type="ArrayMesh" uid="uid://caberma67bo6s" path="res://models/StreetFullMesh.obj" id="1_klpqb"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8v4kp"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ew31u"]
+sky_material = SubResource("ProceduralSkyMaterial_8v4kp")
+
+[sub_resource type="Environment" id="Environment_lxoya"]
+background_mode = 2
+sky = SubResource("Sky_ew31u")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Newroad" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lxoya")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.25, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 mesh = ExtResource("1_klpqb")
 skeleton = NodePath("")
+
+[node name="PlayerStart" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+
+[node name="OpponentStart" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31921, 3.8147e-06, 30.8949)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.9999, -5.48672e-09, 0.0141541, 0.00471637, 0.942851, 0.333182, -0.0133453, 0.333215, -0.942756, 1.6711, 2.75508, -4.65176)
+fov = 63.8

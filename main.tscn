@@ -1,38 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtfwac13qj7mm"]
+[gd_scene load_steps=7 format=3 uid="uid://dtfwac13qj7mm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fkddq"]
 [ext_resource type="PackedScene" uid="uid://cor24qh0pn50y" path="res://scenes/player.tscn" id="2_qcchi"]
 [ext_resource type="PackedScene" uid="uid://bmtiuhi3cudxy" path="res://interface/main_menu.tscn" id="3_6imo6"]
 [ext_resource type="PackedScene" uid="uid://cwjwy7gtx1i3m" path="res://interface/debug_visual_prompt.tscn" id="4_yun4g"]
-[ext_resource type="PackedScene" path="res://scenes/newroad.tscn" id="6_amfe8"]
+[ext_resource type="PackedScene" uid="uid://cci8jrhpax825" path="res://scenes/newroad.tscn" id="6_amfe8"]
 [ext_resource type="PackedScene" uid="uid://doycwkgn55wm6" path="res://interface/notes_slider.tscn" id="7_pdvva"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j5vxl"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_ew31u"]
-sky_material = SubResource("ProceduralSkyMaterial_j5vxl")
-
-[sub_resource type="Environment" id="Environment_hir0a"]
-background_mode = 2
-sky = SubResource("Sky_ew31u")
-tonemap_mode = 2
-glow_enabled = true
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_fkddq")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_hir0a")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.0133453, -0.333215, 0.942757, 0.00471637, 0.942851, 0.333181, -0.9999, 7.48825e-25, 0.0141542, 6.12806, 2.46233, 1.35966)
-fov = 63.8
+[node name="MainMenu" parent="." instance=ExtResource("3_6imo6")]
 
 [node name="PlayerBusker" parent="." instance=ExtResource("2_qcchi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73901, 0.063892, 0)
@@ -40,13 +18,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73901, 0.063892, 0)
 [node name="AIBusker" parent="." instance=ExtResource("2_qcchi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02699, 0.107473, 1.7046)
 
-[node name="MainMenu" parent="." instance=ExtResource("3_6imo6")]
-
 [node name="DebugVisualPrompt" parent="." instance=ExtResource("4_yun4g")]
 mouse_filter = 2
 
 [node name="Newroad" parent="." instance=ExtResource("6_amfe8")]
-transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 2.559, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.559, 0, 0)
+visible = false
 
 [node name="NotesSlider" parent="." instance=ExtResource("7_pdvva")]
 visible = false
