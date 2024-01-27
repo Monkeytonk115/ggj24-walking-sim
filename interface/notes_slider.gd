@@ -9,8 +9,6 @@ const ButtonIndicator = preload("res://interface/button_indicator.tscn")
 @export var texture_4 : Texture2D
 @export var texture_wide : Texture2D
 
-@onready var _buttons = []
-
 func _ready():
 	pass
 
@@ -42,9 +40,6 @@ func add_new_button(pos : int) -> void:
 		new_button.position.x = 5
 		new_button.texture = texture_wide
 	if pos == 6:
-		new_button.position.x = 130
-		new_button.texture = texture_wide
-	if pos == 7:
 		new_button.position.x = 255
 		new_button.texture = texture_wide
 	$ButtonHolder.add_child(new_button)
