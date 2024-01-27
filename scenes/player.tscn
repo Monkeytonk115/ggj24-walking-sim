@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://jtxwm7rb33g6"]
+[gd_scene load_steps=10 format=3 uid="uid://jtxwm7rb33g6"]
 
 [ext_resource type="PackedScene" uid="uid://bs71wl0yb2pck" path="res://models/player.glb" id="1_hkp7k"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="2_5pjmv"]
 [ext_resource type="Texture2D" uid="uid://cfnwga5btuqei" path="res://addons/kenney_prototype_textures/purple/texture_09.png" id="2_20xev"]
 [ext_resource type="Texture2D" uid="uid://0u2endgesf8m" path="res://addons/kenney_prototype_textures/green/texture_09.png" id="2_24uxp"]
 
@@ -317,6 +318,7 @@ _data = {
 }
 
 [node name="player" instance=ExtResource("1_hkp7k")]
+script = ExtResource("2_5pjmv")
 
 [node name="head" parent="." index="0"]
 transform = Transform3D(0.247486, 0, 0, 0, 0.184011, 0, 0, 0, 0.247486, 0, 2.10656, 0)
