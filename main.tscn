@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtfwac13qj7mm"]
+[gd_scene load_steps=10 format=3 uid="uid://dtfwac13qj7mm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fkddq"]
-[ext_resource type="PackedScene" uid="uid://llqsrrlds7hd" path="res://scenes/road.tscn" id="1_r37c3"]
 [ext_resource type="PackedScene" uid="uid://dw1mtcytlm6ue" path="res://scenes/humanoid.tscn" id="2_v3edw"]
 [ext_resource type="PackedScene" uid="uid://bmtiuhi3cudxy" path="res://interface/main_menu.tscn" id="3_6imo6"]
 [ext_resource type="PackedScene" uid="uid://cwjwy7gtx1i3m" path="res://interface/debug_visual_prompt.tscn" id="4_yun4g"]
@@ -30,9 +29,6 @@ environment = SubResource("Environment_hir0a")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 0, 0, 0)
 shadow_enabled = true
-
-[node name="road" parent="." instance=ExtResource("1_r37c3")]
-visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.0133453, -0.333215, 0.942757, 0.00471637, 0.942851, 0.333181, -0.9999, 7.48825e-25, 0.0141542, 6.12806, 2.46233, 1.35966)
