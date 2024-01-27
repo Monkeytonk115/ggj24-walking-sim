@@ -8,7 +8,7 @@ const ButtonIndicator = preload("res://interface/button_indicator.tscn")
 @export var button_3 : Texture2D
 @export var button_4 : Texture2D
 
-@onready var _buttons = []
+
 
 func _ready():
 	pass
@@ -44,6 +44,19 @@ func add_new_button(pos : int) -> void:
 # 1005
 func input_key(key : String) -> void:
 	for b in $ButtonHolder.get_children():
-		if b.position.y > 1005 - 120:
-			print(b.position.y - 1005 + 60)
-			b.queue_free()
+		if Input.is_action_pressed("ui_lane1") and b.position.x == 5:
+			if b.position.y > 1005 - 120:
+				print(b.position.y - 1005 + 60)
+				b.queue_free()
+		if Input.is_action_pressed("ui_lane2")and b.position.x == 130:
+			if b.position.y > 1005 - 120:
+				print(b.position.y - 1005 + 60)
+				b.queue_free()
+		if Input.is_action_pressed("ui_lane3") and b.position.x == 255:
+			if b.position.y > 1005 - 120:
+				print(b.position.y - 1005 + 60)
+				b.queue_free()
+		if Input.is_action_pressed("ui_lane4") and b.position.x == 380:
+			if b.position.y > 1005 - 120:
+				print(b.position.y - 1005 + 60)
+				b.queue_free()
