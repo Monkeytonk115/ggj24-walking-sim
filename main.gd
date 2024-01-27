@@ -12,7 +12,8 @@ func _process(delta):
 
 
 func _on_main_menu_start_game():
-	pass # Replace with function body.
+	$NotesSlider.show()
+	$Timer.start()
 
 
 func _input(event):
@@ -20,8 +21,13 @@ func _input(event):
 		# Show the main menu when pressing escape
 		if event.keycode == KEY_ESCAPE:
 			$MainMenu.show()
+			$NotesSlider.hide()
 		# Otherwise pass the key to the debug visual
 		if event.pressed:
 			var text = OS.get_keycode_string(event.keycode)
 			print(text)
 			$DebugVisualPrompt.update_text(text)
+
+
+func _on_timer_timeout():
+	$NotesSlider.add_new_button(randi_range(1,4))

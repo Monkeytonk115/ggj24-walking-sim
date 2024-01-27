@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://doycwkgn55wm6"]
+
+[ext_resource type="Script" path="res://interface/notes_slider.gd" id="1_p4quk"]
+[ext_resource type="Texture2D" uid="uid://wg8nkmhkiis3" path="res://textures/4stave.png" id="2_di3sk"]
+[ext_resource type="Texture2D" uid="uid://cub3jqppe6nx2" path="res://textures/button_a.png" id="2_k1bxg"]
+[ext_resource type="Texture2D" uid="uid://6r0pgaq4j1y1" path="res://textures/button_s.png" id="3_aoqlw"]
+[ext_resource type="Texture2D" uid="uid://bl3yc7we6wtgi" path="res://textures/button_d.png" id="4_5k1vv"]
+[ext_resource type="Texture2D" uid="uid://b4jy6loiwy2o8" path="res://textures/button_f.png" id="5_j5hsp"]
+
+[node name="NotesSlider" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -770.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_p4quk")
+button_1 = ExtResource("2_k1bxg")
+button_2 = ExtResource("3_aoqlw")
+button_3 = ExtResource("4_5k1vv")
+button_4 = ExtResource("5_j5hsp")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_di3sk")
+
+[node name="ButtonHolder" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

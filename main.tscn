@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtfwac13qj7mm"]
+[gd_scene load_steps=11 format=3 uid="uid://dtfwac13qj7mm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fkddq"]
 [ext_resource type="PackedScene" uid="uid://llqsrrlds7hd" path="res://scenes/road.tscn" id="1_r37c3"]
 [ext_resource type="PackedScene" uid="uid://dw1mtcytlm6ue" path="res://scenes/humanoid.tscn" id="2_v3edw"]
 [ext_resource type="PackedScene" uid="uid://bmtiuhi3cudxy" path="res://interface/main_menu.tscn" id="3_6imo6"]
 [ext_resource type="PackedScene" uid="uid://cwjwy7gtx1i3m" path="res://interface/debug_visual_prompt.tscn" id="4_yun4g"]
-[ext_resource type="PackedScene" uid="uid://dty8dgj8mybao" path="res://scenes/newroad.tscn" id="6_amfe8"]
+[ext_resource type="PackedScene" path="res://scenes/newroad.tscn" id="6_amfe8"]
+[ext_resource type="PackedScene" uid="uid://doycwkgn55wm6" path="res://interface/notes_slider.tscn" id="7_pdvva"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j5vxl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -51,4 +52,11 @@ mouse_filter = 2
 [node name="Newroad" parent="." instance=ExtResource("6_amfe8")]
 transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 2.559, 0, 0)
 
+[node name="NotesSlider" parent="." instance=ExtResource("7_pdvva")]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+
 [connection signal="start_game" from="MainMenu" to="." method="_on_main_menu_start_game"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
