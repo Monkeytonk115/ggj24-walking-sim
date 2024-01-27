@@ -24,6 +24,7 @@ func _process(delta):
 func add_new_button(pos : int) -> void:
 	var new_button = ButtonIndicator.instantiate()
 	new_button.position.y = 0
+	new_button.track = pos
 	if pos == 1:
 		new_button.position.x = 5
 		new_button.texture = texture_1
@@ -47,8 +48,9 @@ func add_new_button(pos : int) -> void:
 
 # 140 90
 # 1005
-func input_key(key : String) -> void:
+func input_key(pressed_track : int) -> void:
 	for b in $ButtonHolder.get_children():
 		if b.position.y > 1005 - 120:
-			print(b.position.y - 1005 + 60)
-			b.queue_free()
+			if b.track == pressed_track:
+				print(b.position.y - 1005 + 60)
+				b.queue_free()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dtfwac13qj7mm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fkddq"]
-[ext_resource type="PackedScene" uid="uid://cor24qh0pn50y" path="res://scenes/player.tscn" id="2_qcchi"]
+[ext_resource type="PackedScene" uid="uid://jtxwm7rb33g6" path="res://scenes/player.tscn" id="2_qcchi"]
 [ext_resource type="PackedScene" uid="uid://bmtiuhi3cudxy" path="res://interface/main_menu.tscn" id="3_6imo6"]
 [ext_resource type="PackedScene" uid="uid://cwjwy7gtx1i3m" path="res://interface/debug_visual_prompt.tscn" id="4_yun4g"]
 [ext_resource type="PackedScene" uid="uid://cci8jrhpax825" path="res://scenes/newroad.tscn" id="6_amfe8"]
@@ -23,12 +23,16 @@ mouse_filter = 2
 
 [node name="Newroad" parent="." instance=ExtResource("6_amfe8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.559, 0, 0)
-visible = false
 
 [node name="NotesSlider" parent="." instance=ExtResource("7_pdvva")]
 visible = false
 offset_left = 335.0
 offset_right = -1585.0
+texture_1 = null
+texture_2 = null
+texture_3 = null
+texture_4 = null
+texture_wide = null
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7

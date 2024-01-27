@@ -24,11 +24,18 @@ func _input(event):
 			$MainMenu.show()
 			$NotesSlider.hide()
 		# Otherwise pass the key to the debug visual
-		if event.pressed:
-			var text = OS.get_keycode_string(event.keycode)
-			$DebugVisualPrompt.update_text(text)
-			$NotesSlider.input_key(text)
-
+		if Input.is_action_just_pressed("ui_lane1"):
+			$NotesSlider.input_key(1)
+		if Input.is_action_just_pressed("ui_lane2"):
+			$NotesSlider.input_key(2)
+		if Input.is_action_just_pressed("ui_lane3"):
+			$NotesSlider.input_key(3)
+		if Input.is_action_just_pressed("ui_lane4"):
+			$NotesSlider.input_key(4)
+		#if Input.is_action_just_pressed("bongo_left"):
+			#$NotesSlider.input_key(5)
+		#if Input.is_action_just_pressed("bongo_right"):
+			#$NotesSlider.input_key(6)
 
 func _on_timer_timeout():
 	$NotesSlider.add_new_button(randi_range(1,4))

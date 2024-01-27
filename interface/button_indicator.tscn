@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5t8vgtjabwk2"]
+[gd_scene load_steps=3 format=3 uid="uid://b5t8vgtjabwk2"]
+
+[ext_resource type="Script" path="res://interface/button_indicator.gd" id="1_4yemh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0v0l2"]
 load_path = "res://.godot/imported/button_a.png-a76fc6229bfbc0f245da0b723a709115.ctex"
@@ -8,3 +10,4 @@ offset_right = 120.0
 offset_bottom = 120.0
 texture = SubResource("CompressedTexture2D_0v0l2")
 expand_mode = 1
+script = ExtResource("1_4yemh")
