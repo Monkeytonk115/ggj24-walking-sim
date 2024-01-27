@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmtiuhi3cudxy"]
+[gd_scene load_steps=3 format=3 uid="uid://bmtiuhi3cudxy"]
 
 [ext_resource type="Script" path="res://interface/main_menu.gd" id="1_712lx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5h2y"]
+bg_color = Color(0.192157, 0.164706, 0.262745, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,8 +13,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_712lx")
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s5h2y")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 659.0
 offset_top = 120.0
@@ -20,7 +34,7 @@ offset_bottom = 219.0
 theme_override_font_sizes/font_size = 72
 text = "Busk your nutz"
 
-[node name="Start Button" type="Button" parent="."]
+[node name="Start Button" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 484.0
 offset_top = 682.0
@@ -29,7 +43,7 @@ offset_bottom = 757.0
 theme_override_font_sizes/font_size = 48
 text = "Let's do this!"
 
-[node name="Exit button" type="Button" parent="."]
+[node name="Exit button" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 1140.0
 offset_top = 680.0
@@ -38,5 +52,5 @@ offset_bottom = 755.0
 theme_override_font_sizes/font_size = 48
 text = "Naw dawg..."
 
-[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Exit button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Panel/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/Exit button" to="." method="_on_exit_button_pressed"]
