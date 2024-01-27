@@ -42,5 +42,13 @@ func input_key(pressed_track : int) -> void:
 	for b in $ButtonHolder.get_children():
 		if b.position.y > 1005 - 120:
 			if b.track == pressed_track:
+				if b.track == 1:
+					$AudioStreamC.play()
+				if b.track == 2:
+					$AudioStreamE.play()
+				if b.track == 3:
+					$AudioStreamF.play()
+				if b.track == 4:
+					$AudioStreamG.play()
 				print(b.position.y - 1005 + 60)
 				b.queue_free()

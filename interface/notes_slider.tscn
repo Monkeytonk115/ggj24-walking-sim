@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://doycwkgn55wm6"]
+[gd_scene load_steps=7 format=3 uid="uid://doycwkgn55wm6"]
 
 [ext_resource type="Script" path="res://interface/notes_slider.gd" id="1_p4quk"]
+[ext_resource type="AudioStream" uid="uid://bg1kl2c4oivlg" path="res://audio/sine-c.ogg" id="3_23kls"]
+[ext_resource type="AudioStream" uid="uid://sf4gwd7mix1y" path="res://audio/sine-e.ogg" id="4_1fmyj"]
+[ext_resource type="AudioStream" uid="uid://sfqsbk1k5y3b" path="res://audio/sine-f.ogg" id="5_tu48k"]
 [ext_resource type="Texture2D" uid="uid://cwg223o3ly2if" path="res://textures/tracks.png" id="6_lcmg7"]
+[ext_resource type="AudioStream" uid="uid://du6ccgt0anvk0" path="res://audio/sine-g.ogg" id="6_pfa1l"]
 
 [node name="NotesSlider" type="Control"]
 layout_mode = 3
@@ -31,3 +35,15 @@ layout_mode = 1
 anchors_preset = 0
 offset_right = 500.0
 offset_bottom = 1080.0
+
+[node name="AudioStreamC" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_23kls")
+
+[node name="AudioStreamE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1fmyj")
+
+[node name="AudioStreamF" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tu48k")
+
+[node name="AudioStreamG" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_pfa1l")
