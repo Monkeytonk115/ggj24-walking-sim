@@ -1,5 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://jtxwm7rb33g6"]
+[gd_scene load_steps=6 format=3 uid="uid://cor24qh0pn50y"]
 
 [ext_resource type="PackedScene" uid="uid://bs71wl0yb2pck" path="res://models/player.glb" id="1_hkp7k"]
+[ext_resource type="Texture2D" uid="uid://cfnwga5btuqei" path="res://addons/kenney_prototype_textures/purple/texture_09.png" id="2_20xev"]
+[ext_resource type="Texture2D" uid="uid://0u2endgesf8m" path="res://addons/kenney_prototype_textures/green/texture_09.png" id="2_24uxp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbedk"]
+albedo_texture = ExtResource("2_24uxp")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46g15"]
+albedo_texture = ExtResource("2_20xev")
+uv1_triplanar = true
 
 [node name="player" instance=ExtResource("1_hkp7k")]
+
+[node name="head" parent="." index="0"]
+transform = Transform3D(0.247486, 0, 0, 0, 0.184011, 0, 0, 0, 0.247486, 0, 2.10656, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_tbedk")
+
+[node name="body" parent="." index="1"]
+transform = Transform3D(0.289522, 0, 0, 0, 0.289522, 0, 0, 0, 0.289522, 0, 1.35594, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_46g15")
+
+[node name="hand_right" parent="." index="2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.49993, -1)
+
+[node name="feet_right" parent="." index="3"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.1, -0.191)
+
+[node name="feet_left" parent="." index="4"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.1, 0.191)
+
+[node name="hand_left" parent="." index="5"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.49993, 1)
