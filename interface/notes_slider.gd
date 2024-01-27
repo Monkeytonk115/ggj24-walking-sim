@@ -38,3 +38,10 @@ func add_new_button(pos : int) -> void:
 		new_button.position.y = 220
 		new_button.texture = button_4
 	$ButtonHolder.add_child(new_button)
+
+
+# 140 90
+func input_key(key : String) -> void:
+	for b in $ButtonHolder.get_children():
+		if 90 < b.position.x and b.position.x < 140:
+			b.queue_free()

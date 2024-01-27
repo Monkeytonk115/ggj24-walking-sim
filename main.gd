@@ -27,6 +27,7 @@ func _input(event):
 			var text = OS.get_keycode_string(event.keycode)
 			print(text)
 			$DebugVisualPrompt.update_text(text)
+			$NotesSlider.input_key(text)
 
 
 func _on_timer_timeout():
