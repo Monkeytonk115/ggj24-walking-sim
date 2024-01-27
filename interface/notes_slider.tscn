@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://doycwkgn55wm6"]
+[gd_scene load_steps=7 format=3 uid="uid://doycwkgn55wm6"]
 
 [ext_resource type="Script" path="res://interface/notes_slider.gd" id="1_p4quk"]
-[ext_resource type="Texture2D" uid="uid://bvdoyjpg40d1m" path="res://textures/blue_circle.png" id="2_gfn36"]
-[ext_resource type="Texture2D" uid="uid://b43fujy35jbfr" path="res://textures/button_bongo.png" id="3_xpxbv"]
+[ext_resource type="AudioStream" uid="uid://bg1kl2c4oivlg" path="res://audio/sine-c.ogg" id="3_23kls"]
+[ext_resource type="AudioStream" uid="uid://sf4gwd7mix1y" path="res://audio/sine-e.ogg" id="4_1fmyj"]
+[ext_resource type="AudioStream" uid="uid://sfqsbk1k5y3b" path="res://audio/sine-f.ogg" id="5_tu48k"]
 [ext_resource type="Texture2D" uid="uid://cwg223o3ly2if" path="res://textures/tracks.png" id="6_lcmg7"]
+[ext_resource type="AudioStream" uid="uid://du6ccgt0anvk0" path="res://audio/sine-g.ogg" id="6_pfa1l"]
 
 [node name="NotesSlider" type="Control"]
 layout_mode = 3
@@ -16,11 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_p4quk")
-texture_1 = ExtResource("2_gfn36")
-texture_2 = ExtResource("2_gfn36")
-texture_3 = ExtResource("2_gfn36")
-texture_4 = ExtResource("2_gfn36")
-texture_wide = ExtResource("3_xpxbv")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,3 +33,17 @@ texture = ExtResource("6_lcmg7")
 [node name="ButtonHolder" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 1080.0
+
+[node name="AudioStreamC" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_23kls")
+
+[node name="AudioStreamE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1fmyj")
+
+[node name="AudioStreamF" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tu48k")
+
+[node name="AudioStreamG" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_pfa1l")
