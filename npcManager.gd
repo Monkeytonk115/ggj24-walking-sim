@@ -6,7 +6,7 @@ const npc = preload("res://scenes/player.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var new_npc = npc.instantiate()
-	new_npc.setShirtColour(Color(randi() % 127,randi() % 127,randi() % 127,0))
+	new_npc.setShirtColour(Color.from_hsv(randf(), 1, 1, 1))
 	add_child(new_npc)
 	position = Vector3 (15,0,randi() % 4 + 1)
 	
