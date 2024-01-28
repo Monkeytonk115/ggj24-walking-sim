@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	self._time += delta
 	
-	# Rotate speed is delta so framerate independed
+	# Rotate speed is delta so framerate independent
 	# 3 so it's not too slow
 	# noise so it's random
 	# elapsed time so it speeds up
@@ -32,4 +32,4 @@ func _on_start_button_pressed():
 
 
 func _on_exit_button_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
