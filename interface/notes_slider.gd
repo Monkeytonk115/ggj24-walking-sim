@@ -4,8 +4,8 @@ extends Control
 const ButtonIndicator = preload("res://interface/button_indicator.tscn")
 const npc = preload("res://scenes/player.tscn")
 
-
-
+var current_sequence = []
+var current_sequence_i = 0
 
 func _process(delta):
 	# Move the buttons left
@@ -15,37 +15,52 @@ func _process(delta):
 			b.queue_free()
 
 
-func add_new_button(pos : int) -> void:
-	print("new note", pos)
-	var new_button = ButtonIndicator.instantiate()
-	new_button.position.y = 0
-	if pos == 1:
-		new_button.position.x = 5
-	if pos == 2:
-		new_button.position.x = 130
-	if pos == 3:
-		new_button.position.x = 255
-	if pos == 4:
-		new_button.position.x = 380
-	if pos == 5:
-		new_button.position.x = 5
-	if pos == 6:
-		new_button.position.x = 255
-	new_button.set_track(pos)
-	$ButtonHolder.add_child(new_button)
-
-
 # 140 90
 # 1005
-func input_key(pressed_track : int) -> void:
+# Returns the score for this press
+func input_key(pressed_track : int) -> float:
 	for b in $ButtonHolder.get_children():
 		if b.position.y > 1005 - 120:
 			if b.track == pressed_track:
-				#eff.pitch_scale = [1, 1.4, 1.8, 2][b.track - 1]
-				#$AudioStreamPlayer.play()
 				print(b.position.y - 1005 + 60)
 				b.queue_free()
+				return atan(b.position.y - 1005 + 60)
+	return -1.0
 
 # Called from main to play the sequence
 func play_sequence(sequence, bpm):
-	pass
+	current_sequence = sequence
+	current_sequence_i = 0
+	$Timer.wait_time = 60.0 / bpm
+	$Timer.start()
+
+
+func _on_timer_timeout():
+	var note = 0
+	if current_sequence_i < len(current_sequence):
+		note = current_sequence[current_sequence_i]
+	else:
+		$Timer.stop()
+		return
+	print("new note ", note)
+	current_sequence_i += 1
+	
+	# If the note is blank, we are not having a note here
+	if note == 0:
+		return
+	
+	# Else create a new button to put on the track
+	var new_button = ButtonIndicator.instantiate()
+	new_button.position.y = 0
+	match note:
+		1:
+			new_button.position.x = 5
+		2:
+			new_button.position.x = 130
+		3:
+			new_button.position.x = 255
+		4:
+			new_button.position.x = 380
+	
+	new_button.set_track(note)
+	$ButtonHolder.add_child(new_button)

@@ -62,6 +62,7 @@ func _on_title_screen_start_game():
 		$AIBusker.show()
 
 	game_state = "start"
+	current_bpm = 120
 	$Timer.start()
 
 
@@ -94,11 +95,18 @@ func _input(event):
 			#$NotesSlider.input_key(6)
 
 
+# Load a sequence file into an array of length 16
 func load_sequence(file : String) -> Array:
 	print(file)
 	var f = FileAccess.open(file, FileAccess.READ)
 	var s = f.get_as_text()
-	return s.split("\n")
+	var output_sequence = []
+	for l in s.split("\n"):
+		if l == "":
+			output_sequence.append(0)
+		else:
+			output_sequence.append(int(l))
+	return output_sequence
 
 
 func _on_timer_timeout():
@@ -133,3 +141,4 @@ func _on_timer_timeout():
 			$Timer.wait_time = ((16 / current_bpm) / 60) + 2
 		"player_play":
 			$NotesSlider.play_sequence(current_sequence, current_bpm)
+			$Timer.stop()
