@@ -313,7 +313,7 @@ tracks/11/keys = {
 
 [sub_resource type="Animation" id="Animation_ci5hf"]
 resource_name = "npc walk"
-length = 6.0
+length = 5.0
 loop_mode = 1
 step = 0.05
 tracks/0/type = "value"

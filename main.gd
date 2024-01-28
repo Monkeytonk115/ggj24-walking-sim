@@ -58,7 +58,7 @@ func _on_title_screen_start_game():
 		$AIBusker.transform = o_start.transform
 		$AIBusker.show()
 
-	current_instrument = load("res://instruments/InstrumentSine.tres")
+	current_instrument = load("res://instruments/Harmonica.tres")
 
 
 func _input(event):
