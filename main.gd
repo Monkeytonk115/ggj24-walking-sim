@@ -10,6 +10,7 @@ const newroad_packed = preload("res://scenes/newroad.tscn")
 var title_screen = null
 var current_level = null
 var current_sequence : int
+var current_instrument = null
 
 
 @onready var eff : AudioEffectPitchShift = AudioServer.get_bus_effect(0, 0)
@@ -57,7 +58,7 @@ func _on_title_screen_start_game():
 		$AIBusker.transform = o_start.transform
 		$AIBusker.show()
 
-	$AudioStreamPlayer.stream = load("res://scenes/InstrumentSine.tres").base_note
+	current_instrument = load("res://instruments/InstrumentSine.tres")
 
 
 func _input(event):
@@ -69,13 +70,20 @@ func _input(event):
 		# Otherwise pass the key to the debug visual
 		if Input.is_action_just_pressed("ui_lane1"):
 			$NotesSlider.input_key(1)
+			$AudioStreamPlayer.stream = current_instrument.track_1
+			$AudioStreamPlayer.play()
 		if Input.is_action_just_pressed("ui_lane2"):
 			$NotesSlider.input_key(2)
+			$AudioStreamPlayer.stream = current_instrument.track_2
+			$AudioStreamPlayer.play()
 		if Input.is_action_just_pressed("ui_lane3"):
 			$NotesSlider.input_key(3)
+			$AudioStreamPlayer.stream = current_instrument.track_3
+			$AudioStreamPlayer.play()
 		if Input.is_action_just_pressed("ui_lane4"):
 			$NotesSlider.input_key(4)
-			
+			$AudioStreamPlayer.stream = current_instrument.track_4
+			$AudioStreamPlayer.play()
 		#if Input.is_action_just_pressed("bongo_left"):
 			#$NotesSlider.input_key(5)
 		#if Input.is_action_just_pressed("bongo_right"):

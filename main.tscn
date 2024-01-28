@@ -26,5 +26,6 @@ wait_time = 0.7
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_86hx8")
+max_polyphony = 4
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
