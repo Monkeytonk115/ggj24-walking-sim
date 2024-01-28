@@ -65,7 +65,6 @@ func _on_title_screen_start_game():
 	$Timer.start()
 
 
-
 func _input(event):
 	if event is InputEventKey:
 		# Show the main menu when pressing escape
