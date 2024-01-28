@@ -42,7 +42,7 @@ skeleton = NodePath("")
 transform = Transform3D(0.000933523, -0.000612139, 0.999999, 0.000716611, 1, 0.00061147, -0.999999, 0.00071604, 0.000933961, 0, 0, -1.92051)
 
 [node name="bassdrum" parent="PlayerStart" instance=ExtResource("2_r4y2l")]
-transform = Transform3D(-4.29904e-15, -9.83505e-08, 0.75, 0.75, -3.27835e-08, 0, 3.27835e-08, 0.75, 9.83505e-08, 1, 1.79018, 1.19209e-07)
+transform = Transform3D(5.82077e-11, -9.83709e-08, 0.75, 0.75, -3.27693e-08, 0, 3.27604e-08, 0.75, 9.83709e-08, 0.766813, 1.55189, -0.0202907)
 
 [node name="bongo" parent="PlayerStart" instance=ExtResource("3_1knmt")]
 transform = Transform3D(0.2, 0, -3.49691e-08, 0, 0.2, 0, 3.49691e-08, 0, 0.2, -0.617772, 0.179205, -0.00139201)
