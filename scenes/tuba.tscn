@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0mr8hmxanoac"]
+[gd_scene load_steps=5 format=3 uid="uid://bnno87wquy6g8"]
 
-[ext_resource type="PackedScene" uid="uid://c6fbm3xlniphn" path="res://models/tuba.glb" id="1_nucgd"]
+[ext_resource type="PackedScene" uid="uid://3iavakks3bru" path="res://models/tuba.glb" id="1_nucgd"]
 [ext_resource type="Script" path="res://interface/play_anim.gd" id="2_g4f0x"]
 
 [sub_resource type="Animation" id="Animation_3yyv3"]
@@ -13,7 +13,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.05, 1, 1, 1, 1, 0.15, 1, 2, 2, 2, 0.25, 1, 1, 1, 1)
+tracks/0/keys = PackedFloat32Array(0.05, 1, 0.05, 0.05, 0.05, 0.15, 1, 0.1, 0.1, 0.1, 0.25, 1, 0.05, 0.05, 0.05)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_06g16"]
 _data = {
