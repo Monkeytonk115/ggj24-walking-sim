@@ -14,6 +14,8 @@ var current_instrument = null
 var current_sequence : Array = []
 var current_bpm = 120
 
+var score : float = 0.0
+
 var game_state
 
 @onready var eff : AudioEffectPitchShift = AudioServer.get_bus_effect(0, 0)
@@ -62,8 +64,11 @@ func _on_title_screen_start_game():
 		$AIBusker.show()
 
 	game_state = "start"
+	score = 0.0
 	current_bpm = 120
+	$Timer.wait_time = 1
 	$Timer.start()
+	print($Timer)
 
 
 func _input(event):
@@ -72,27 +77,23 @@ func _input(event):
 		if event.keycode == KEY_ESCAPE:
 			_create_title_screen()
 			$NotesSlider.hide()
-		# Otherwise pass the key to the debug visual
-		if Input.is_action_just_pressed("ui_lane1"):
-			$NotesSlider.input_key(1)
-			$AudioStreamPlayer.stream = current_instrument.track_1
-			$AudioStreamPlayer.play()
-		if Input.is_action_just_pressed("ui_lane2"):
-			$NotesSlider.input_key(2)
-			$AudioStreamPlayer.stream = current_instrument.track_2
-			$AudioStreamPlayer.play()
-		if Input.is_action_just_pressed("ui_lane3"):
-			$NotesSlider.input_key(3)
-			$AudioStreamPlayer.stream = current_instrument.track_3
-			$AudioStreamPlayer.play()
-		if Input.is_action_just_pressed("ui_lane4"):
-			$NotesSlider.input_key(4)
-			$AudioStreamPlayer.stream = current_instrument.track_4
-			$AudioStreamPlayer.play()
-		#if Input.is_action_just_pressed("bongo_left"):
-			#$NotesSlider.input_key(5)
-		#if Input.is_action_just_pressed("bongo_right"):
-			#$NotesSlider.input_key(6)
+		if game_state == "player_play":
+			if Input.is_action_just_pressed("ui_lane1"):
+				score += $NotesSlider.input_key(1)
+				$AudioStreamPlayer.stream = current_instrument.track_1
+				$AudioStreamPlayer.play()
+			if Input.is_action_just_pressed("ui_lane2"):
+				score += $NotesSlider.input_key(2)
+				$AudioStreamPlayer.stream = current_instrument.track_2
+				$AudioStreamPlayer.play()
+			if Input.is_action_just_pressed("ui_lane3"):
+				score += $NotesSlider.input_key(3)
+				$AudioStreamPlayer.stream = current_instrument.track_3
+				$AudioStreamPlayer.play()
+			if Input.is_action_just_pressed("ui_lane4"):
+				score += $NotesSlider.input_key(4)
+				$AudioStreamPlayer.stream = current_instrument.track_4
+				$AudioStreamPlayer.play()
 
 
 # Load a sequence file into an array of length 16
@@ -142,3 +143,13 @@ func _on_timer_timeout():
 		"player_play":
 			$NotesSlider.play_sequence(current_sequence, current_bpm)
 			$Timer.stop()
+		"end":
+			print("score: ", score)
+			game_state = "start"
+			$Timer.wait_time = 1
+
+
+func _on_notes_slider_sequence_complete():
+	game_state = "end"
+	$Timer.wait_time = 1
+	$Timer.start()

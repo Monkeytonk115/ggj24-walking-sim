@@ -22,10 +22,10 @@ offset_left = 335.0
 offset_right = -1585.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.7
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_86hx8")
 max_polyphony = 4
 
+[connection signal="sequence_complete" from="NotesSlider" to="." method="_on_notes_slider_sequence_complete"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
