@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtfwac13qj7mm"]
+[gd_scene load_steps=6 format=3 uid="uid://dtfwac13qj7mm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_fkddq"]
 [ext_resource type="PackedScene" uid="uid://jtxwm7rb33g6" path="res://scenes/player.tscn" id="2_qcchi"]
 [ext_resource type="AudioStream" uid="uid://bg1kl2c4oivlg" path="res://audio/sine-c.ogg" id="5_86hx8"]
+[ext_resource type="PackedScene" uid="uid://cfb27ixlx4sw6" path="res://scenes/failscreen.tscn" id="5_mc48n"]
 [ext_resource type="PackedScene" uid="uid://doycwkgn55wm6" path="res://interface/notes_slider.tscn" id="7_pdvva"]
 
 [node name="Main" type="Node3D"]
@@ -28,6 +29,9 @@ stream = ExtResource("5_86hx8")
 max_polyphony = 4
 
 [node name="TimerBuskerPlayback" type="Timer" parent="."]
+
+[node name="Failscreen" parent="." instance=ExtResource("5_mc48n")]
+visible = false
 
 [connection signal="sequence_complete" from="NotesSlider" to="." method="_on_notes_slider_sequence_complete"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

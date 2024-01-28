@@ -36,6 +36,7 @@ func _create_title_screen():
 	if current_level:
 		current_level.queue_free()
 		current_level = null
+	$NotesSlider.hide()
 	$AIBusker.hide()
 	$PlayerBusker.hide()
 	$Timer.stop()
@@ -77,13 +78,11 @@ func _on_title_screen_start_game():
 	$Timer.start()
 	print($Timer)
 
-
 func _input(event):
 	if event is InputEventKey:
 		# Show the main menu when pressing escape
 		if event.keycode == KEY_ESCAPE:
 			_create_title_screen()
-			$NotesSlider.hide()
 		if game_state == "player_play":
 			if Input.is_action_just_pressed("ui_lane1"):
 				score += $NotesSlider.input_key(1)
@@ -106,6 +105,9 @@ func _input(event):
 				$AudioStreamPlayer.stream = current_instrument.track_4
 				$AudioStreamPlayer.play()
 			$NotesSlider.update_score_label(score)
+			if score < 0:
+				$Failscreen.show()
+				_create_title_screen()
 
 
 # Load a sequence file into an array of length 16
