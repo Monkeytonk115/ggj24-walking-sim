@@ -28,9 +28,11 @@ func input_key(pressed_track : int) -> float:
 	for b in $ButtonHolder.get_children():
 		if b.position.y > 1005 - 120:
 			if b.track == pressed_track:
-				print(b.position.y - 1005 + 60)
+				var diff = abs(b.position.y - 1005 + 60) # 0 dead on, 60 far away
 				b.queue_free()
-				return atan(b.position.y - 1005 + 60)
+				
+				return 1.0 - (diff / 60.0) # 1 on, 0 far
+				#return atan(b.position.y - 1005 + 60)
 	return -1.0
 
 
@@ -70,3 +72,7 @@ func _on_timer_timeout():
 	
 	new_button.set_track(note)
 	$ButtonHolder.add_child(new_button)
+
+
+func update_score_label(score : float):
+	$Label.text = "Score: %s" % score

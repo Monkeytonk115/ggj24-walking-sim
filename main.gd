@@ -66,6 +66,7 @@ func _on_title_screen_start_game():
 
 	game_state = "start"
 	score = 0.0
+	$NotesSlider.update_score_label(score)
 	current_bpm = 120
 	$Timer.wait_time = 1
 	$Timer.start()
@@ -99,6 +100,7 @@ func _input(event):
 				$PlayerBusker.play_instrument()
 				$AudioStreamPlayer.stream = current_instrument.track_4
 				$AudioStreamPlayer.play()
+			$NotesSlider.update_score_label(score)
 
 
 # Load a sequence file into an array of length 16

@@ -34,4 +34,13 @@ offset_bottom = 1080.0
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 21.0
+offset_right = 617.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 24
+text = "Score: "
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
