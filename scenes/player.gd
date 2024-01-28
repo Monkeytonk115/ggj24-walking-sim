@@ -58,12 +58,13 @@ func draw_instrument(instrument : Instrument):
 
 # Play the instrument sequence at the bpm
 func play_instrument():
-	instrument_model.find_child("Animation").play("play")
-	
+	#instrument_model.find_child("Animation").play("play")
+	pass
 
 func step():
-	print("step")
-	var randNumber = randi() % 4
-	if randNumber == 0:
-		$body/AudioStreamPlayer3D.set_stream(foot1)
-		$body/AudioStreamPlayer3D.play()
+	#print("step")
+	#var randNumber = randi() % 4
+	#if randNumber == 0:
+		#$body/AudioStreamPlayer3D.set_stream(foot1)
+		#$body/AudioStreamPlayer3D.play()
+	pass
