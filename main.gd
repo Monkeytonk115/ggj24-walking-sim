@@ -19,6 +19,7 @@ var current_sequence : int
 func _ready():
 	_create_title_screen()
 	print(eff)
+	print(load_sequence("res://sequences/sequence_1.txt"))
 
 
 func _create_title_screen():
@@ -79,3 +80,10 @@ func _input(event):
 			#$NotesSlider.input_key(5)
 		#if Input.is_action_just_pressed("bongo_right"):
 			#$NotesSlider.input_key(6)
+
+
+func load_sequence(file : String) -> Array:
+	var f = FileAccess.open(file, FileAccess.READ)
+	var s = f.get_as_text()
+	return s.split("\n")
+	
