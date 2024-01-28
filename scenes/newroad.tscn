@@ -2,13 +2,15 @@
 
 [ext_resource type="ArrayMesh" uid="uid://caberma67bo6s" path="res://models/StreetFullMesh.obj" id="1_klpqb"]
 [ext_resource type="PackedScene" uid="uid://ditsb4nnd5dae" path="res://scenes/npc_manager.tscn" id="2_ik08v"]
-[ext_resource type="PackedScene" path="res://scenes/bongo.tscn" id="3_7180p"]
+[ext_resource type="PackedScene" uid="uid://caj8rponagl45" path="res://models/bassdrum.glb" id="2_r4y2l"]
+[ext_resource type="PackedScene" uid="uid://c1jgp7vimwen2" path="res://models/bongo.glb" id="3_1knmt"]
 [ext_resource type="PackedScene" uid="uid://df2oajeb0m0h3" path="res://models/clogs.glb" id="4_81mgc"]
-[ext_resource type="PackedScene" path="res://scenes/fiddle.tscn" id="4_byp7l"]
-[ext_resource type="PackedScene" uid="uid://dw4jye7b5q4kw" path="res://scenes/harmonica.tscn" id="5_c1vyq"]
+[ext_resource type="PackedScene" uid="uid://bv6cb5lcdyxcr" path="res://models/fiddle.glb" id="4_cr57e"]
+[ext_resource type="PackedScene" uid="uid://b1dtpmsman6ho" path="res://models/harmonica.glb" id="5_6bddd"]
 [ext_resource type="PackedScene" uid="uid://do4gakibtpfeg" path="res://models/toilet.glb" id="5_s524j"]
-[ext_resource type="PackedScene" path="res://scenes/clownhorn.tscn" id="6_0ty4x"]
-[ext_resource type="PackedScene" uid="uid://d0mr8hmxanoac" path="res://scenes/tuba.tscn" id="7_fnr10"]
+[ext_resource type="PackedScene" uid="uid://b3nht0sxftiek" path="res://models/horn.glb" id="6_rclvw"]
+[ext_resource type="PackedScene" uid="uid://3iavakks3bru" path="res://models/tuba.glb" id="7_d5uxw"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8v4kp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -60,22 +62,22 @@ transform = Transform3D(-0.012491, 0.00481769, -0.00676498, 0.00824293, 0.008684
 [node name="OpponentStart" type="Marker3D" parent="."]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.31921, 3.8147e-06, 7.38157)
 
-[node name="bassdrum" parent="OpponentStart" instance=ExtResource("2_1ee3x")]
-transform = Transform3D(9.83505e-08, 5.1247e-21, 0.75, -3.90799e-14, 0.75, 0, -0.75, -3.90799e-14, 9.83505e-08, 1, 1.79018, 1.19209e-07)
+[node name="bassdrum" parent="OpponentStart" instance=ExtResource("2_r4y2l")]
+transform = Transform3D(-4.29904e-15, -9.83505e-08, 0.75, 0.75, -3.27835e-08, 0, 3.27835e-08, 0.75, 9.83505e-08, 1, 1.79018, 1.19209e-07)
 
-[node name="bongo" parent="OpponentStart" instance=ExtResource("3_7180p")]
+[node name="bongo" parent="OpponentStart" instance=ExtResource("3_1knmt")]
 transform = Transform3D(0.2, 0, -3.49691e-08, 0, 0.2, 0, 3.49691e-08, 0, 0.2, -0.617772, 0.179205, -0.00139201)
 
-[node name="fiddle" parent="OpponentStart" instance=ExtResource("4_byp7l")]
+[node name="fiddle" parent="OpponentStart" instance=ExtResource("4_cr57e")]
 transform = Transform3D(-0.0649519, -0.129904, -0.0375, -0.128078, 0.0724444, -0.0291172, 0.0433273, 0.0194114, -0.142288, -0.526333, 1.33375, 0.472664)
 
-[node name="harmonica" parent="OpponentStart" instance=ExtResource("5_c1vyq")]
+[node name="harmonica" parent="OpponentStart" instance=ExtResource("5_6bddd")]
 transform = Transform3D(0.075, 0, -1.31134e-08, 0, 0.075, 0, 1.31134e-08, 0, 0.075, -0.597775, 1, -1.19209e-07)
 
-[node name="clownhorn" parent="OpponentStart" instance=ExtResource("6_0ty4x")]
+[node name="horn" parent="OpponentStart" instance=ExtResource("6_rclvw")]
 transform = Transform3D(0.0320129, 0, 0.038408, 0, 0.05, 0, -0.038408, 0, 0.0320129, -0.752735, 1.39831, -0.670281)
 
-[node name="tuba" parent="OpponentStart" instance=ExtResource("7_fnr10")]
+[node name="tuba" parent="OpponentStart" instance=ExtResource("7_d5uxw")]
 transform = Transform3D(-0.012491, 0.00481769, -0.00676498, 0.00824293, 0.00868405, -0.00903556, 0.00101446, -0.0112418, -0.00987895, -0.53961, 1.37638, -0.102711)
 
 [node name="Camera3D" type="Camera3D" parent="."]
