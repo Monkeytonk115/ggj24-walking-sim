@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_fkddq"]
 [ext_resource type="PackedScene" uid="uid://jtxwm7rb33g6" path="res://scenes/player.tscn" id="2_qcchi"]
-[ext_resource type="PackedScene" uid="uid://cci8jrhpax825" path="res://scenes/newroad.tscn" id="6_amfe8"]
+[ext_resource type="AudioStream" uid="uid://bg1kl2c4oivlg" path="res://audio/sine-c.ogg" id="5_86hx8"]
 [ext_resource type="PackedScene" uid="uid://doycwkgn55wm6" path="res://interface/notes_slider.tscn" id="7_pdvva"]
 
 [node name="Main" type="Node3D"]
@@ -14,15 +14,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73901, 0.063892, 0)
 [node name="AIBusker" parent="." instance=ExtResource("2_qcchi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02699, 0.107473, 1.7046)
 
-[node name="Newroad" parent="." instance=ExtResource("6_amfe8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.559, 0, 0)
-
 [node name="NotesSlider" parent="." instance=ExtResource("7_pdvva")]
-visible = false
 offset_left = 335.0
 offset_right = -1585.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_86hx8")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

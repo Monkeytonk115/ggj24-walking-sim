@@ -1,5 +1,8 @@
 extends Node3D
 
+signal start_game
+
+
 var _noise
 var _time
 
@@ -28,7 +31,7 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+	start_game.emit()
 
 
 func _on_exit_button_pressed():
