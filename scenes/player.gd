@@ -20,6 +20,7 @@ func _process(delta):
 		if destination != position:
 			position.x -= 0.03
 			($head as MeshInstance3D).rotate_y(1 * delta)
+			($head as MeshInstance3D).look_at(Vector3(0,0,0),Vector3(0,1,0))
 		else:
 			queue_free()
 
