@@ -15,6 +15,9 @@ var current_sequence : Array = []
 var current_sequence_busker_i = 0
 var current_bpm = 120
 
+var ai_busker_instrument
+var player_busker_instrument
+
 var score : float = 0.0
 
 var game_state
@@ -82,22 +85,22 @@ func _input(event):
 		if game_state == "player_play":
 			if Input.is_action_just_pressed("ui_lane1"):
 				score += $NotesSlider.input_key(1)
-				$PlayerBusker.play_instrument()
+				player_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_1
 				$AudioStreamPlayer.play()
 			if Input.is_action_just_pressed("ui_lane2"):
 				score += $NotesSlider.input_key(2)
-				$PlayerBusker.play_instrument()
+				player_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_2
 				$AudioStreamPlayer.play()
 			if Input.is_action_just_pressed("ui_lane3"):
 				score += $NotesSlider.input_key(3)
-				$PlayerBusker.play_instrument()
+				player_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_3
 				$AudioStreamPlayer.play()
 			if Input.is_action_just_pressed("ui_lane4"):
 				score += $NotesSlider.input_key(4)
-				$PlayerBusker.play_instrument()
+				player_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_4
 				$AudioStreamPlayer.play()
 			$NotesSlider.update_score_label(score)
@@ -121,28 +124,28 @@ func _on_timer_timeout():
 	print("timeout state: ", game_state)
 	match game_state:
 		"start":
+			var p_start = current_level.find_child("PlayerStart")
+			var o_start = current_level.find_child("OpponentStart")
 			match randi() % 4:
 				0:
 					current_instrument = load("res://instruments/Fiddle.tres")
+					player_busker_instrument = p_start.find_child("fiddle")
+					ai_busker_instrument = o_start.find_child("fiddle")
 				1:
 					current_instrument = load("res://instruments/Harmonica.tres")
+					player_busker_instrument = p_start.find_child("harmonica")
+					ai_busker_instrument = o_start.find_child("harmonica")
 				2:
 					current_instrument = load("res://instruments/Percussion.tres")
+					player_busker_instrument = p_start.find_child("bongos")
+					ai_busker_instrument = o_start.find_child("bongos")
 				3:
 					current_instrument = load("res://instruments/Tuba.tres")
+					player_busker_instrument = p_start.find_child("tuba")
+					ai_busker_instrument = o_start.find_child("tuba")
 			current_sequence = load_sequence("res://sequences/sequence_%d.txt" % randi_range(1, 8))
-			game_state = "holster_instrument"
-			$Timer.wait_time = 1
-		"holster_instrument":
-			$AIBusker.holster_instrument()
-			$PlayerBusker.holster_instrument()
-			game_state = "draw_instrument"
-			$Timer.wait_time = 2
-		"draw_instrument":
-			$AIBusker.draw_instrument(current_instrument)
-			$PlayerBusker.draw_instrument(current_instrument)
 			game_state = "opponent_play"
-			$Timer.wait_time = 2
+			$Timer.wait_time = 1
 		"opponent_play":
 			$Timer.stop()
 			current_sequence_busker_i = 0
@@ -167,19 +170,19 @@ func _on_timer_busker_playback_timeout():
 	if current_sequence_busker_i < len(current_sequence):
 		match current_sequence[current_sequence_busker_i]:
 			1:
-				$AIBusker.play_instrument()
+				#ai_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_1
 				$AudioStreamPlayer.play()
 			2:
-				$AIBusker.play_instrument()
+				#ai_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_2
 				$AudioStreamPlayer.play()
 			3:
-				$AIBusker.play_instrument()
+				#ai_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_3
 				$AudioStreamPlayer.play()
 			4:
-				$AIBusker.play_instrument()
+				#ai_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_4
 				$AudioStreamPlayer.play()
 	else:
