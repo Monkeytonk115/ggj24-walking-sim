@@ -1,6 +1,6 @@
 extends Node3D
 
-
+var destination
 
 # Humanoid parameters
 @export var torso : String
@@ -16,7 +16,11 @@ func _ready():
 
 
 func _process(delta):
-	pass
+	if destination:
+		if destination != position:
+			position.x -= 0.03
+		else:
+			queue_free()
 
 func setShirtColour(shirtColour):
 	var new_mat = StandardMaterial3D.new()
@@ -25,5 +29,6 @@ func setShirtColour(shirtColour):
 
 
 func npcMove():
-	pass
+	destination = position + Vector3(-5,0,0)
+	
 	
