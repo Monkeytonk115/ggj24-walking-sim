@@ -105,9 +105,7 @@ func _input(event):
 				$AudioStreamPlayer.stream = current_instrument.track_4
 				$AudioStreamPlayer.play()
 			$NotesSlider.update_score_label(score)
-			if score < 0:
-				$Failscreen.show()
-				_create_title_screen()
+			
 
 
 # Load a sequence file into an array of length 16
@@ -195,3 +193,10 @@ func _on_timer_busker_playback_timeout():
 		$Timer.start()
 		$TimerBuskerPlayback.stop()
 	current_sequence_busker_i += 1
+
+
+func _on_notes_slider_missed():
+	$Timer.stop()
+	$TimerBuskerPlayback.stop()
+	$Failscreen.set_score(score)
+	$Failscreen.show()

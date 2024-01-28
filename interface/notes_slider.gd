@@ -1,6 +1,7 @@
 extends Control
 
 signal sequence_complete
+signal missed
 
 const ButtonIndicator = preload("res://interface/button_indicator.tscn")
 const npc = preload("res://scenes/player.tscn")
@@ -15,6 +16,7 @@ func _process(delta):
 		b.position.y = b.position.y + (delta * 360)
 		if b.position.y > 1080:
 			b.queue_free()
+			missed.emit()
 	if playing_sequence and $ButtonHolder.get_child_count() == 0 and len(current_sequence) == 0:
 		playing_sequence = false
 		sequence_complete.emit()

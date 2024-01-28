@@ -33,6 +33,7 @@ max_polyphony = 4
 [node name="Failscreen" parent="." instance=ExtResource("5_mc48n")]
 visible = false
 
+[connection signal="missed" from="NotesSlider" to="." method="_on_notes_slider_missed"]
 [connection signal="sequence_complete" from="NotesSlider" to="." method="_on_notes_slider_sequence_complete"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerBuskerPlayback" to="." method="_on_timer_busker_playback_timeout"]
