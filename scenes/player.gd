@@ -12,6 +12,8 @@ var foot1 = preload("res://audio/foots-001.ogg")
 @export var legs : String
 @export var shoe : String
 
+var instrument_model
+
 
 func _ready():
 	audio = get_node("body/AudioStreamPlayer3D")
@@ -44,17 +46,19 @@ func npcMove():
 
 # Animate holstering instrument
 func holster_instrument():
-	pass
+	if instrument_model:
+		instrument_model.queue_free()
 
 
 # Animate drawing instrument
 func draw_instrument(instrument : Instrument):
-	pass
+	instrument_model = instrument.model.instantiate()
+	$hand_right.add_child(instrument_model)
 
 
 # Play the instrument sequence at the bpm
-func play_instrument(sequence : Array, bpm : int):
-	pass
+func play_instrument():
+	instrument_model.find_child("Animation").play("play")
 	
 
 func step():
