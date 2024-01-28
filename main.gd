@@ -38,6 +38,8 @@ func _create_title_screen():
 		current_level = null
 	$AIBusker.hide()
 	$PlayerBusker.hide()
+	$Timer.stop()
+	$TimerBuskerPlayback.stop()
 	if title_screen == null:
 		title_screen = title_screen_packed.instantiate()
 		title_screen.start_game.connect( self._on_title_screen_start_game )
@@ -170,19 +172,19 @@ func _on_timer_busker_playback_timeout():
 	if current_sequence_busker_i < len(current_sequence):
 		match current_sequence[current_sequence_busker_i]:
 			1:
-				#ai_busker_instrument.find_child("Animation").play("play")
+				ai_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_1
 				$AudioStreamPlayer.play()
 			2:
-				#ai_busker_instrument.find_child("Animation").play("play")
+				ai_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_2
 				$AudioStreamPlayer.play()
 			3:
-				#ai_busker_instrument.find_child("Animation").play("play")
+				ai_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_3
 				$AudioStreamPlayer.play()
 			4:
-				#ai_busker_instrument.find_child("Animation").play("play")
+				ai_busker_instrument.find_child("Animation").play("play")
 				$AudioStreamPlayer.stream = current_instrument.track_4
 				$AudioStreamPlayer.play()
 	else:
