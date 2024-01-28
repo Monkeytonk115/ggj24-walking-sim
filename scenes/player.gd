@@ -1,5 +1,7 @@
 extends Node3D
 
+
+
 # Humanoid parameters
 @export var torso : String
 @export var hair : String
@@ -15,7 +17,6 @@ func _ready():
 
 func _process(delta):
 	pass
-	# TODO: make the humanoid do things like walk around
 
 func setShirtColour(shirtColour):
 	$body.get_surface_override_material(0).albedo_color = shirtColour
@@ -24,3 +25,4 @@ func setShirtColour(shirtColour):
 
 func npcMove():
 	pass
+	

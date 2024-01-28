@@ -23,4 +23,4 @@ func _on_timer_timeout():
 	new_npc.setShirtColour(Color.from_hsv(randf(), 1, 1, 1))
 	new_npc.position = Vector3 (5,0,randi() % 4 + 1)
 	add_child(new_npc)
-	
+	new_npc.npcMove()
