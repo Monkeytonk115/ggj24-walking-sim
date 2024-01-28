@@ -19,6 +19,7 @@ func _process(delta):
 	if destination:
 		if destination != position:
 			position.x -= 0.03
+			($head as MeshInstance3D).rotate_y(1 * delta)
 		else:
 			queue_free()
 
