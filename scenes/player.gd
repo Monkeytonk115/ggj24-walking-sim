@@ -37,3 +37,18 @@ func npcMove():
 	moveMultiplier = randi() % 9 + 1
 	$AnimationPlayer.play("npc walk")
 	$AnimationPlayer.speed_scale = 4 * moveMultiplier
+
+
+# Animate holstering instrument
+func holster_instrument():
+	pass
+
+
+# Animate drawing instrument
+func draw_instrument(instrument : Instrument):
+	pass
+
+
+# Play the instrument sequence at the bpm
+func play_instrument(sequence : Array, bpm : int):
+	pass

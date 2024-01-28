@@ -45,3 +45,7 @@ func input_key(pressed_track : int) -> void:
 				#$AudioStreamPlayer.play()
 				print(b.position.y - 1005 + 60)
 				b.queue_free()
+
+# Called from main to play the sequence
+func play_sequence(sequence, bpm):
+	pass
