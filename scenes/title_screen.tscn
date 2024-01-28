@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1a2vgkcaxhoh"]
+
+[ext_resource type="Script" path="res://scenes/title_screen.gd" id="1_eq35q"]
+[ext_resource type="PackedScene" uid="uid://jtxwm7rb33g6" path="res://scenes/player.tscn" id="1_f6sie"]
+[ext_resource type="PackedScene" uid="uid://b1dtpmsman6ho" path="res://models/harmonica.glb" id="3_8gnbx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_14f8q"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 1.5
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_4jclt"]
+sky_material = SubResource("ProceduralSkyMaterial_14f8q")
+
+[sub_resource type="Environment" id="Environment_6ov75"]
+background_mode = 2
+sky = SubResource("Sky_4jclt")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k5ye1"]
+size = Vector2(40, 4)
+
+[node name="TitleScreen" type="Node3D"]
+script = ExtResource("1_eq35q")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6ov75")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.21289, -0.452414, 0, 0.904827, 0.425779, 0.5, -0.368736, 0.783603, 0, 0, 0)
+light_color = Color(1, 1, 0.862745, 1)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_k5ye1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 0, 2, -2)
+mesh = SubResource("PlaneMesh_k5ye1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.95741, 0.288731, 0, -0.288731, 0.95741, 0.0170047, 2.45999, 3.10308)
+fov = 34.1129
+
+[node name="player" parent="." instance=ExtResource("1_f6sie")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="harmonica" parent="." instance=ExtResource("3_8gnbx")]
+transform = Transform3D(-0.000674551, 0, -0.0499954, -0.0434025, 0.0248169, 0.000585598, 0.0248146, 0.0434065, -0.000334805, -0.248543, 2.28983, 1.84831)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 682.0
+offset_right = 781.0
+offset_bottom = 757.0
+theme_override_font_sizes/font_size = 48
+text = "Let's do this!"
+
+[node name="Exit button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1140.0
+offset_top = 680.0
+offset_right = 1437.0
+offset_bottom = 755.0
+theme_override_font_sizes/font_size = 48
+text = "Naw dawg..."
+
+[connection signal="pressed" from="Control/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/Exit button" to="." method="_on_exit_button_pressed"]
