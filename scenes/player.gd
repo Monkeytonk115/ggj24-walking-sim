@@ -19,9 +19,10 @@ func _process(delta):
 	pass
 
 func setShirtColour(shirtColour):
-	$body.get_surface_override_material(0).albedo_color = shirtColour
-	$body.get_surface_override_material(0).albedo_texture = null
-	
+	var new_mat = StandardMaterial3D.new()
+	new_mat.albedo_color = shirtColour
+	$body.set_surface_override_material(0, new_mat)
+
 
 func npcMove():
 	pass
