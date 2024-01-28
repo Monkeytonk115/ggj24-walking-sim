@@ -58,8 +58,8 @@ func draw_instrument(instrument : Instrument):
 
 # Play the instrument sequence at the bpm
 func play_instrument():
-	#instrument_model.find_child("Animation").play("play")
-	pass
+	instrument_model.find_child("Animation").play("play")
+	
 
 func step():
 	#print("step")
