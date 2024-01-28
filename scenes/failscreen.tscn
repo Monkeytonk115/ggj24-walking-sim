@@ -100,22 +100,33 @@ theme_override_font_sizes/font_size = 24
 text = "Score: "
 
 [node name="Label2" type="Label" parent="Panel2"]
-offset_left = 86.0
-offset_top = 571.0
-offset_right = 244.0
-offset_bottom = 901.0
+layout_mode = 0
+offset_left = 88.0
+offset_top = 361.0
+offset_right = 325.0
+offset_bottom = 1054.0
 theme_override_font_sizes/font_size = 24
 text = "Programming
 Matthew
+Thomas
+Dan
 
 Art
 Dan
 Thomas
 
+Models
+Thomas
+Dan
+
 Sound
+Dan
+
+Controller
 Joolz"
 
 [node name="Label3" type="Label" parent="Panel2"]
+layout_mode = 0
 offset_left = 1347.0
 offset_top = 614.0
 offset_right = 1862.0
