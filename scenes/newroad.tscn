@@ -33,10 +33,10 @@ mesh = ExtResource("1_klpqb")
 skeleton = NodePath("")
 
 [node name="PlayerStart" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.92051)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1.92051)
 
 [node name="OpponentStart" type="Marker3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.31921, 3.8147e-06, 7.38157)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.31921, 3.8147e-06, 7.38157)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998279, -0.0150343, 0.0566759, 0.00471637, 0.942851, 0.333182, -0.0584461, 0.332876, -0.941158, 1.6711, 2.75508, -4.65176)
