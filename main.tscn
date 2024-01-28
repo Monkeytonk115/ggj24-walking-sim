@@ -10,11 +10,14 @@ script = ExtResource("1_fkddq")
 
 [node name="PlayerBusker" parent="." instance=ExtResource("2_qcchi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73901, 0.063892, 0)
+visible = false
 
 [node name="AIBusker" parent="." instance=ExtResource("2_qcchi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02699, 0.107473, 1.7046)
+visible = false
 
 [node name="NotesSlider" parent="." instance=ExtResource("7_pdvva")]
+visible = false
 offset_left = 335.0
 offset_right = -1585.0
 

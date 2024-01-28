@@ -25,6 +25,8 @@ func _create_title_screen():
 	if current_level:
 		current_level.queue_free()
 		current_level = null
+	$AIBusker.hide()
+	$PlayerBusker.hide()
 	if title_screen == null:
 		title_screen = title_screen_packed.instantiate()
 		title_screen.start_game.connect( self._on_title_screen_start_game )
@@ -41,7 +43,19 @@ func _on_title_screen_start_game():
 		current_level = newroad_packed.instantiate()
 		add_child(current_level)
 		current_level.find_child("Camera3D").make_current()
-	
+
+		# Place the player in the level
+		var p_start = current_level.find_child("PlayerStart")
+		assert(p_start)
+		$PlayerBusker.transform = p_start.transform
+		$PlayerBusker.show()
+
+		# Place the opponent in the level
+		var o_start = current_level.find_child("OpponentStart")
+		assert(o_start)
+		$AIBusker.transform = o_start.transform
+		$AIBusker.show()
+
 	$AudioStreamPlayer.stream = load("res://scenes/InstrumentSine.tres").base_note
 
 
