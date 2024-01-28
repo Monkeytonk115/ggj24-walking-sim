@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cci8jrhpax825"]
+[gd_scene load_steps=8 format=3 uid="uid://cci8jrhpax825"]
 
 [ext_resource type="ArrayMesh" uid="uid://caberma67bo6s" path="res://models/StreetFullMesh.obj" id="1_klpqb"]
 [ext_resource type="PackedScene" uid="uid://ditsb4nnd5dae" path="res://scenes/npc_manager.tscn" id="2_ik08v"]
+[ext_resource type="PackedScene" uid="uid://df2oajeb0m0h3" path="res://models/clogs.glb" id="4_81mgc"]
+[ext_resource type="PackedScene" uid="uid://do4gakibtpfeg" path="res://models/toilet.glb" id="5_s524j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8v4kp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,4 +42,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31921, 3.8147e-06, 30.8949)
 transform = Transform3D(-0.9999, -5.48672e-09, 0.0141541, 0.00471637, 0.942851, 0.333182, -0.0133453, 0.333215, -0.942756, 1.6711, 2.75508, -4.65176)
 fov = 63.8
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
+
 [node name="npcManager" parent="." instance=ExtResource("2_ik08v")]
+
+[node name="clogs" parent="." instance=ExtResource("4_81mgc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 8.74228e-08, 2.98023e-08, -1, 1.77636e-15, -1, -2.98023e-08, 3.75173, 4, 8.54685)
+
+[node name="toilet" parent="." instance=ExtResource("5_s524j")]
+transform = Transform3D(-2.25, -3.39741e-07, 1.48505e-14, 0, -9.83506e-08, -2.25, 3.39741e-07, -2.25, 9.83506e-08, -3.36286, 3.73523, 8.70439)
