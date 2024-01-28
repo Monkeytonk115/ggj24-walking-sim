@@ -388,6 +388,23 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector3(0, 0.1, 0.191), Vector3(-0.568427, 0.264553, 0.191), Vector3(0, 0.1, 0.191), Vector3(0.545804, 0.209847, 0.191), Vector3(0, 0.1, 0.191)]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.25, 3.75),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"step"
+}, {
+"args": [],
+"method": &"step"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ohsc0"]
 _data = {
@@ -406,6 +423,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tbedk")
 [node name="body" parent="." index="1"]
 transform = Transform3D(0.289522, 0, 0, 0, 0.289522, 0, 0, 0, 0.289522, 0, 1.35594, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_46g15")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="body" index="0"]
 
 [node name="hand_right" parent="." index="2"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.5, -1)
