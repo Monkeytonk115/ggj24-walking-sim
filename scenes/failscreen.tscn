@@ -99,4 +99,38 @@ offset_bottom = 174.4
 theme_override_font_sizes/font_size = 24
 text = "Score: "
 
+[node name="Label2" type="Label" parent="Panel2"]
+offset_left = 86.0
+offset_top = 571.0
+offset_right = 244.0
+offset_bottom = 901.0
+theme_override_font_sizes/font_size = 24
+text = "Programming
+Matthew
+
+Art
+Dan
+Thomas
+
+Sound
+Joolz"
+
+[node name="Label3" type="Label" parent="Panel2"]
+offset_left = 1347.0
+offset_top = 614.0
+offset_right = 1862.0
+offset_bottom = 981.0
+theme_override_font_sizes/font_size = 24
+text = "3rd party assets
+
+Kenney Prototype Textures
+CC0 by kenny via www.kenney.nl
+
+Tuba model
+GPL 2.0 by MikeeUSA via opengameart.org
+
+Pandeiro model
+CC-BY-SA 3.0 by farrer via opengameart.org
+"
+
 [connection signal="pressed" from="Panel2/Button" to="." method="_on_button_pressed"]
