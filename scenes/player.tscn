@@ -312,7 +312,7 @@ tracks/11/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_ci5hf"]
-resource_name = "npcWalk"
+resource_name = "npc walk"
 length = 6.0
 loop_mode = 1
 step = 0.05
@@ -393,7 +393,7 @@ tracks/5/keys = {
 _data = {
 "RESET": SubResource("Animation_vlwvw"),
 "bopping": SubResource("Animation_dec43"),
-"npcWalk": SubResource("Animation_ci5hf")
+"npc walk": SubResource("Animation_ci5hf")
 }
 
 [node name="player" instance=ExtResource("1_hkp7k")]
