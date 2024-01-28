@@ -12,8 +12,6 @@ var moveMultiplier
 @export var legs : String
 @export var shoe : String
 
-var instrument_model
-
 
 func _ready():
 	#audio = get_node("body/AudioStreamPlayer3D")
@@ -43,23 +41,6 @@ func npcMove():
 	$AnimationPlayer.play("npc walk")
 	$AnimationPlayer.speed_scale = 4 * moveMultiplier
 
-
-# Animate holstering instrument
-func holster_instrument():
-	if instrument_model:
-		instrument_model.queue_free()
-
-
-# Animate drawing instrument
-func draw_instrument(instrument : Instrument):
-	instrument_model = instrument.model.instantiate()
-	$hand_right.add_child(instrument_model)
-
-
-# Play the instrument sequence at the bpm
-func play_instrument():
-	instrument_model.find_child("Animation").play("play")
-	
 
 func step():
 	#print("step")
