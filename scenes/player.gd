@@ -2,8 +2,8 @@ extends Node3D
 
 var destination
 var moveMultiplier
-var audio
-var foot1 = preload("res://audio/foots-001.ogg")
+#var audio
+#var foot1 = preload("res://audio/foots-001.ogg")
 
 # Humanoid parameters
 @export var torso : String
@@ -16,7 +16,7 @@ var instrument_model
 
 
 func _ready():
-	audio = get_node("body/AudioStreamPlayer3D")
+	#audio = get_node("body/AudioStreamPlayer3D")
 	pass
 	# TODO: make the humanoid change based on the parameters given
 
