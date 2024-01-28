@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dymywhvf2cpph"]
+[gd_scene load_steps=5 format=3 uid="uid://dw4jye7b5q4kw"]
 
 [ext_resource type="PackedScene" uid="uid://b1dtpmsman6ho" path="res://models/harmonica.glb" id="2_mdrhd"]
 [ext_resource type="Script" path="res://interface/play_anim.gd" id="2_sp3s3"]

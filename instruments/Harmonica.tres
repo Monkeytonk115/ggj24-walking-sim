@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Instrument" load_steps=6 format=3 uid="uid://cwoyqiu7eaf1b"]
+[gd_resource type="Resource" script_class="Instrument" load_steps=7 format=3 uid="uid://cwoyqiu7eaf1b"]
 
+[ext_resource type="PackedScene" path="res://scenes/harmonica.tscn" id="1_a5xuy"]
 [ext_resource type="Script" path="res://instruments/instrument.gd" id="1_gy5v8"]
 [ext_resource type="AudioStream" uid="uid://b1x8s7epr2wpo" path="res://audio/harmonica_1_var-001.ogg" id="2_ddsbx"]
 [ext_resource type="AudioStream" uid="uid://f1oo8hyviu3c" path="res://audio/harmonica_2_var-001.ogg" id="3_l6l6n"]
@@ -12,3 +13,4 @@ track_1 = ExtResource("2_ddsbx")
 track_2 = ExtResource("3_l6l6n")
 track_3 = ExtResource("4_naahb")
 track_4 = ExtResource("5_71vla")
+model = ExtResource("1_a5xuy")

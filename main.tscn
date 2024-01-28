@@ -27,5 +27,8 @@ offset_right = -1585.0
 stream = ExtResource("5_86hx8")
 max_polyphony = 4
 
+[node name="TimerBuskerPlayback" type="Timer" parent="."]
+
 [connection signal="sequence_complete" from="NotesSlider" to="." method="_on_notes_slider_sequence_complete"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerBuskerPlayback" to="." method="_on_timer_busker_playback_timeout"]

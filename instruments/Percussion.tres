@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Instrument" load_steps=6 format=3 uid="uid://dp66h5y6utoib"]
+[gd_resource type="Resource" script_class="Instrument" load_steps=7 format=3 uid="uid://cp64xf00ufpt2"]
 
+[ext_resource type="PackedScene" path="res://scenes/bongo.tscn" id="1_e6uxv"]
 [ext_resource type="Script" path="res://instruments/instrument.gd" id="1_va86b"]
 [ext_resource type="AudioStream" uid="uid://ds5dio6y5q7ac" path="res://audio/bassdrum-001.ogg" id="2_vhhl1"]
 [ext_resource type="AudioStream" uid="uid://cxsqoobamgb7w" path="res://audio/bongo_H-001.ogg" id="3_e3tu1"]
@@ -12,3 +13,4 @@ track_1 = ExtResource("2_vhhl1")
 track_2 = ExtResource("3_e3tu1")
 track_3 = ExtResource("4_wmxg4")
 track_4 = ExtResource("5_5fxyd")
+model = ExtResource("1_e6uxv")
