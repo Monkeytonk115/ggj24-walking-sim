@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Instrument" load_steps=6 format=3 uid="uid://ctimhy5cr1bgy"]
+
+[ext_resource type="Script" path="res://instruments/instrument.gd" id="1_b01em"]
+[ext_resource type="AudioStream" uid="uid://6se5rchkkhl0" path="res://audio/tuba_1_var-001.ogg" id="2_6aqjb"]
+[ext_resource type="AudioStream" uid="uid://btbkyq07v4efv" path="res://audio/tuba_2_var-001.ogg" id="3_acw0g"]
+[ext_resource type="AudioStream" uid="uid://dqbj1e514bwm3" path="res://audio/tuba_3_var-001.ogg" id="4_u6icc"]
+[ext_resource type="AudioStream" uid="uid://davqqggls1cqu" path="res://audio/tuba_4_var-001.ogg" id="5_qqkvk"]
+
+[resource]
+script = ExtResource("1_b01em")
+track_1 = ExtResource("2_6aqjb")
+track_2 = ExtResource("3_acw0g")
+track_3 = ExtResource("4_u6icc")
+track_4 = ExtResource("5_qqkvk")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Instrument" load_steps=6 format=3 uid="uid://c2ulwigid3c7j"]
+
+[ext_resource type="Script" path="res://instruments/instrument.gd" id="1_xjbeg"]
+[ext_resource type="AudioStream" uid="uid://dbgm1qmhc44bt" path="res://audio/fiddle_1_var-001.ogg" id="2_11qth"]
+[ext_resource type="AudioStream" uid="uid://dbi56226e4ddy" path="res://audio/fiddle_2_var-001.ogg" id="3_oyc12"]
+[ext_resource type="AudioStream" uid="uid://dp2ly6106ewta" path="res://audio/fiddle_3_var-001.ogg" id="4_uk1ay"]
+[ext_resource type="AudioStream" uid="uid://ctosy4kgwx7pg" path="res://audio/fiddle_4_var-001.ogg" id="5_terdq"]
+
+[resource]
+script = ExtResource("1_xjbeg")
+track_1 = ExtResource("2_11qth")
+track_2 = ExtResource("3_oyc12")
+track_3 = ExtResource("4_uk1ay")
+track_4 = ExtResource("5_terdq")
