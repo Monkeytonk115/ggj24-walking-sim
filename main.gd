@@ -1,5 +1,6 @@
 extends Node3D
 
+const newroad = preload("res://scenes/newroad.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
