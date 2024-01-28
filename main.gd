@@ -137,8 +137,8 @@ func _on_timer_timeout():
 					ai_busker_instrument = o_start.find_child("harmonica")
 				2:
 					current_instrument = load("res://instruments/Percussion.tres")
-					player_busker_instrument = p_start.find_child("bongos")
-					ai_busker_instrument = o_start.find_child("bongos")
+					player_busker_instrument = p_start.find_child("bongo")
+					ai_busker_instrument = o_start.find_child("bongo")
 				3:
 					current_instrument = load("res://instruments/Tuba.tres")
 					player_busker_instrument = p_start.find_child("tuba")
