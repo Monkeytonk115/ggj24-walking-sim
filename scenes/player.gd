@@ -58,7 +58,8 @@ func play_instrument(sequence : Array, bpm : int):
 	
 
 func step():
+	print("step")
 	var randNumber = randi() % 4
 	if randNumber == 0:
-		audio.AudioStream.set_stream(foot1)
-		audio.play()
+		$body/AudioStreamPlayer3D.set_stream(foot1)
+		$body/AudioStreamPlayer3D.play()

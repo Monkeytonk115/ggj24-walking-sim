@@ -425,6 +425,7 @@ transform = Transform3D(0.289522, 0, 0, 0, 0.289522, 0, 0, 0, 0.289522, 0, 1.355
 surface_material_override/0 = SubResource("StandardMaterial3D_46g15")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="body" index="0"]
+bus = &"In Game"
 
 [node name="hand_right" parent="." index="2"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.5, -1)
