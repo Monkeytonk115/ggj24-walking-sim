@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dymywhvf2cpph"]
+
+[ext_resource type="PackedScene" uid="uid://b1dtpmsman6ho" path="res://models/harmonica.glb" id="2_mdrhd"]
+[ext_resource type="Script" path="res://interface/play_anim.gd" id="2_sp3s3"]
+
+[sub_resource type="Animation" id="Animation_3yyv3"]
+resource_name = "play"
+length = 0.25
+step = 0.05
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.05, 1, 1, 1, 1, 0.15, 1, 2, 2, 2, 0.25, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06g16"]
+_data = {
+"play": SubResource("Animation_3yyv3")
+}
+
+[node name="Harmonica" type="Node3D"]
+
+[node name="harmonica" parent="." instance=ExtResource("2_mdrhd")]
+script = ExtResource("2_sp3s3")
+
+[node name="Animation" type="AnimationPlayer" parent="harmonica"]
+libraries = {
+"": SubResource("AnimationLibrary_06g16")
+}

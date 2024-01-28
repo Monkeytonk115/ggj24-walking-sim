@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmfd56t5ua4d4"]
+
+[ext_resource type="PackedScene" uid="uid://b3nht0sxftiek" path="res://models/horn.glb" id="1_5f2gi"]
+[ext_resource type="Script" path="res://interface/play_anim.gd" id="2_v6jsx"]
+
+[sub_resource type="Animation" id="Animation_3yyv3"]
+resource_name = "play"
+length = 0.25
+step = 0.05
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.05, 1, 1, 1, 1, 0.15, 1, 2, 2, 2, 0.25, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06g16"]
+_data = {
+"play": SubResource("Animation_3yyv3")
+}
+
+[node name="clownhorn" type="Node3D"]
+
+[node name="horn" parent="." instance=ExtResource("1_5f2gi")]
+script = ExtResource("2_v6jsx")
+
+[node name="Animation" type="AnimationPlayer" parent="horn"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_06g16")
+}

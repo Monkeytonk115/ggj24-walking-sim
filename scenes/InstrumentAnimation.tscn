@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cql1s6r5nhbnl"]
+
+[sub_resource type="Animation" id="Animation_2pt21"]
+resource_name = "play_anim"
+step = 0.05
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.25, 1, 1.25, 1.25, 1.25, 0.5, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_poh0y"]
+_data = {
+"play_anim": SubResource("Animation_2pt21")
+}
+
+[node name="InstrumentAnimation" type="Node3D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_poh0y")
+}

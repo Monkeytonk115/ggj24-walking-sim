@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1f7xciwb6pj0"]
+
+[ext_resource type="PackedScene" uid="uid://bv6cb5lcdyxcr" path="res://models/fiddle.glb" id="1_3y1xj"]
+[ext_resource type="Script" path="res://interface/play_anim.gd" id="2_lfxpk"]
+
+[sub_resource type="Animation" id="Animation_3yyv3"]
+resource_name = "play"
+length = 0.25
+step = 0.05
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.05, 1, 1, 1, 1, 0.15, 1, 2, 2, 2, 0.25, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06g16"]
+_data = {
+"play": SubResource("Animation_3yyv3")
+}
+
+[node name="Fiddle" type="Node3D"]
+
+[node name="fiddle" parent="." instance=ExtResource("1_3y1xj")]
+transform = Transform3D(0.224144, -0.836516, 0.5, 0.965926, 0.258819, 0, -0.12941, 0.482963, 0.866025, 0, 0, 0)
+script = ExtResource("2_lfxpk")
+
+[node name="Animation" type="AnimationPlayer" parent="fiddle"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_06g16")
+}
