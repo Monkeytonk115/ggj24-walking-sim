@@ -2,6 +2,8 @@ extends Node3D
 
 var destination
 var moveMultiplier
+var audio
+var foot1 = preload("res://audio/foots-001.ogg")
 
 # Humanoid parameters
 @export var torso : String
@@ -12,6 +14,7 @@ var moveMultiplier
 
 
 func _ready():
+	audio = get_node("body/AudioStreamPlayer3D")
 	pass
 	# TODO: make the humanoid change based on the parameters given
 
@@ -34,7 +37,7 @@ func setShirtColour(shirtColour):
 
 func npcMove():
 	destination = position + Vector3(-5,0,0)
-	moveMultiplier = randi() % 9 + 1
+	moveMultiplier = randi() % 5 + 1
 	$AnimationPlayer.play("npc walk")
 	$AnimationPlayer.speed_scale = 4 * moveMultiplier
 
@@ -52,3 +55,11 @@ func draw_instrument(instrument : Instrument):
 # Play the instrument sequence at the bpm
 func play_instrument(sequence : Array, bpm : int):
 	pass
+	
+
+func step():
+	print("step")
+	var randNumber = randi() % 4
+	if randNumber == 0:
+		$body/AudioStreamPlayer3D.set_stream(foot1)
+		$body/AudioStreamPlayer3D.play()
