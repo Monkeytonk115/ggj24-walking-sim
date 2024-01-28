@@ -12,6 +12,7 @@ var current_level = null
 
 var current_instrument = null
 var current_sequence : Array = []
+var current_sequence_busker_i = 0
 var current_bpm = 120
 
 var score : float = 0.0
@@ -80,18 +81,22 @@ func _input(event):
 		if game_state == "player_play":
 			if Input.is_action_just_pressed("ui_lane1"):
 				score += $NotesSlider.input_key(1)
+				$PlayerBusker.play_instrument()
 				$AudioStreamPlayer.stream = current_instrument.track_1
 				$AudioStreamPlayer.play()
 			if Input.is_action_just_pressed("ui_lane2"):
 				score += $NotesSlider.input_key(2)
+				$PlayerBusker.play_instrument()
 				$AudioStreamPlayer.stream = current_instrument.track_2
 				$AudioStreamPlayer.play()
 			if Input.is_action_just_pressed("ui_lane3"):
 				score += $NotesSlider.input_key(3)
+				$PlayerBusker.play_instrument()
 				$AudioStreamPlayer.stream = current_instrument.track_3
 				$AudioStreamPlayer.play()
 			if Input.is_action_just_pressed("ui_lane4"):
 				score += $NotesSlider.input_key(4)
+				$PlayerBusker.play_instrument()
 				$AudioStreamPlayer.stream = current_instrument.track_4
 				$AudioStreamPlayer.play()
 
@@ -137,9 +142,10 @@ func _on_timer_timeout():
 			game_state = "opponent_play"
 			$Timer.wait_time = 2
 		"opponent_play":
-			$AIBusker.play_instrument(current_sequence, current_bpm)
-			game_state = "player_play"
-			$Timer.wait_time = ((16 / current_bpm) / 60) + 2
+			$Timer.stop()
+			current_sequence_busker_i = 0
+			$TimerBuskerPlayback.wait_time = 30.0 / current_bpm
+			$TimerBuskerPlayback.start()
 		"player_play":
 			$NotesSlider.play_sequence(current_sequence, current_bpm)
 			$Timer.stop()
@@ -153,3 +159,30 @@ func _on_notes_slider_sequence_complete():
 	game_state = "end"
 	$Timer.wait_time = 1
 	$Timer.start()
+
+
+func _on_timer_busker_playback_timeout():
+	if current_sequence_busker_i < len(current_sequence):
+		match current_sequence[current_sequence_busker_i]:
+			1:
+				$AIBusker.play_instrument()
+				$AudioStreamPlayer.stream = current_instrument.track_1
+				$AudioStreamPlayer.play()
+			2:
+				$AIBusker.play_instrument()
+				$AudioStreamPlayer.stream = current_instrument.track_2
+				$AudioStreamPlayer.play()
+			3:
+				$AIBusker.play_instrument()
+				$AudioStreamPlayer.stream = current_instrument.track_3
+				$AudioStreamPlayer.play()
+			4:
+				$AIBusker.play_instrument()
+				$AudioStreamPlayer.stream = current_instrument.track_4
+				$AudioStreamPlayer.play()
+	else:
+		game_state = "player_play"
+		$Timer.wait_time = 1
+		$Timer.start()
+		$TimerBuskerPlayback.stop()
+	current_sequence_busker_i += 1
